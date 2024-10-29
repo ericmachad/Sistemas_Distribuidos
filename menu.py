@@ -36,11 +36,29 @@ def publish_message(message):
     # Publicar a mensagem e a assinatura
     channel.basic_publish(
         exchange='events',
-        routing_key='venda.pedido_realizado',
+        routing_key='produto.mostrar',
         body=json.dumps({'message': message, 'signature': signature.hex()})
     )
     print("Mensagem publicada:", message)
     connection.close()
 
+def mostrar_opcoes():
+    
+    return op
+
 if __name__ == "__main__":
-    publish_message("Pedido realizado com sucesso!")
+    while True: 
+        print("Escolha uma opção:")
+        print("1. Produtos")
+        print("2. Sair") 
+        try:
+            op = input("Digite a opção desejada: ")
+        except ValueError:
+            print('Opcao inválida')
+            continue
+        if op == '1':
+            publish_message('Produto')
+            
+        else: 
+            print("Saindo do menu! ")
+            break

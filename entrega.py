@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # Declarar a fila e se inscrever no tópico de interesse
     result = channel.queue_declare(queue='', exclusive=True)
     queue_name = result.method.queue
-    channel.queue_bind(exchange='events', queue=queue_name, routing_key='venda.pedido_realizado')
+    channel.queue_bind(exchange='events', queue=queue_name, routing_key='entrega.produto')
 
     print('Esperando por mensagens...')
     channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
