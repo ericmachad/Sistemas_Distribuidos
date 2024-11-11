@@ -5,7 +5,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import serialization
 
-with open("chave_privada.pem", "rb") as key_file:
+with open("chave_privada_menu.pem", "rb") as key_file:
     private_key = serialization.load_pem_private_key(key_file.read(), password=None)
 
 def sign_message(message):

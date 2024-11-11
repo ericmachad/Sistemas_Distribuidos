@@ -5,10 +5,10 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import serialization
 
-with open("chave_privada.pem", "rb") as key_file:
+with open("chave_privada_carrinho.pem", "rb") as key_file:
     private_key = serialization.load_pem_private_key(key_file.read(), password=None)
 
-with open("chave_publica.pem", "rb") as key_file:
+with open("chave_publica_produto.pem", "rb") as key_file:
     public_key = serialization.load_pem_public_key(key_file.read())
 
 def verify_signature(message, signature):

@@ -5,7 +5,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import serialization
 
-with open("chave_publica.pem", "rb") as key_file:
+with open("chave_publica_estoque.pem", "rb") as key_file:
     public_key = serialization.load_pem_public_key(key_file.read())
 
 def verify_signature(message, signature):
